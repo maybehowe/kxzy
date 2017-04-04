@@ -1,0 +1,17 @@
+@charset "utf-8";
+/* CSS Document */
+.content{ min-width:1024px; font-size:13px;}
+.content .left{ width:165px; background:#f2f2f2; float:left; /*margin-right:-168px; min-height:620px;*/ top:80px; bottom:0px; position:absolute; z-index:3; left:0px;}
+.content .left .tit{ background:url(../images/main_tit.jpg) no-repeat; width:140px; height:32px; line-height:32px; color:#FFFFFF; font-size:15px; padding-left:25px;}
+.content .left .nr .sl{ background:url(../images/main_sl.jpg) no-repeat; width:120px; height:28px; line-height:28px; padding-left:45px;}
+.content .left .nr .sl a{ color:#317ebd;}
+.content .left .nr div{ background:url(../images/main_hover.jpg) no-repeat; width:120px; height:28px; line-height:28px; padding-left:45px;}
+.content .left .nr div a{ color:#6d6d6d; height:32px; display:block;}
+.content .left .nr div:hover{ background:url(../images/main_pot.jpg) no-repeat;}
+.content .right{ float:none; width:auto; margin-left:165px; background-color: #ffffff;}
+.content .left .nr ul{ margin-left:50px; padding-bottom:10px;}
+.content .left .nr ul li{ line-height:22px;}
+.content .left .nr ul li a{color:#6d6d6d; height:20px; font-size:12px;}
+.content .left .nr ul li a:hover{ color:#42a1d5;}
+.content .left .nr ul li a.hover{ color:#42a1d5;}
+

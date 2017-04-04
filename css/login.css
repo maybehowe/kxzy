@@ -1,0 +1,13 @@
+@import url(all.css);
+@import url(jqtransform.css);
+html{ background:#30517c url(../images/login_bg.jpg) repeat-x 0 0; color:#828282; font-size:14px;}
+th{ font-weight:500;}
+tr{ height:50px;}
+.wrapper1{ background:url(../images/login_bg2.jpg) no-repeat center; width:1000px; height:663px; position:absolute; left:50%; margin-left:-500px;}
+.wrapper1 table{ margin:270px 0 0 690px;}
+.button{ background:url(../images/login_but.jpg) no-repeat 0 0; width:154px; height:42px; display:block; cursor:pointer; margin:30px 0 0 60px;} 
+.button:active{ background-position:0 -42px; display:block;}
+.button:focus{ outline: none;}
+.name{ background:url(../images/login_name.jpg) no-repeat; width:150px; height:32px; padding-left:32px; line-height:32px\0; *line-height:32px; color:#828282; border:0;}
+.pwd{ background:url(../images/login_pwd.jpg) no-repeat; width:150px; height:32px; padding-left:32px; line-height:32px\0; *line-height:32px; color:#828282; border:0;}
+.yzm{ background:url(../images/login_yzm.jpg) no-repeat; width:78px; height:32px; padding-left:32px; line-height:32px\0; *line-height:32px; color:#828282; border:0;}

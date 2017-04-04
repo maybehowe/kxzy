@@ -1,0 +1,48 @@
+/* CSS Document */
+#letter-a b{ margin-bottom:2px;}
+#letter-a b.sl{background: #FFEBBF; width:165px; border: 1px solid #FFC773; display:block; *width:134px; *margin-top:-25px; *padding-left:31px; *z-index:-100; *position:relative;}
+#letter-a b a{ font-size:13px; color:#5f5f5f;}
+#letter-a H2 {
+	FONT-WEIGHT: normal; FONT-SIZE: 12px; margin-left:15px; padding-left:8px; margin-bottom:2px; height:20px; line-height:20px; overflow:hidden; width:135px;
+}
+#letter-a H2.sl{background: #FFEBBF; border: 1px solid #FFC773; height:20px; overflow:hidden;}
+#letter-a h2 a{ font-size:12px; color:#5f5f5f;}
+
+#letter-a .hidden {
+	DISPLAY: none
+}
+.btn-unfold {
+	BACKGROUND: url(../images/bg10.png) no-repeat; FLOAT: left; WIDTH: 13px; MARGIN-RIGHT: 8px; margin-left:8px; HEIGHT: 13px;
+}
+.btn-fold {
+	BACKGROUND: url(../images/bg09.png) no-repeat; FLOAT: left; WIDTH: 13px; MARGIN-RIGHT: 8px; margin-left:8px; HEIGHT: 13px;
+
+}
+.box-list {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 0px; PADDING-BOTTOM: 10px; PADDING-TOP: 10px
+}
+.box-list LI {
+	PADDING-LEFT: 10px; LINE-HEIGHT: 25px; margin-bottom:10px;
+}
+.box-list LI .btn-unfold {
+	MARGIN-TOP: 6px
+}
+.box-list LI .btn-fold {
+	MARGIN-TOP: 6px
+}
+.box-list H2 {
+	COLOR: #1e50a2
+}
+.box-list H2 A {
+	COLOR: #1e50a2
+}
+.box-list H2 A:visited {
+	COLOR: #1e50a2
+}
+.box-list .off {
+	COLOR: #727171
+}
+.box-list .off:visited {
+	COLOR: #727171
+}
+

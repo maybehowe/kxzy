@@ -1,0 +1,35 @@
+科协 系统配置：
+      A:
+
+	1、kxzy-webapp\conf\database.properties:下 修改数据库配置，包括数据库名称、IP、用户名和密码等。
+
+	2、kxzy-webapp\conf\application.properties: 修改发送邮件服务配置。search_server 是配置 全文检索地址
+	   search_server=http\://127.0.0.1\:8080/search/   （ip  端口）
+
+     media_server=192.168.17.5\:8080   （ip  端口）
+  3、	更改/kxzy-webapp/tools-lib/linux64/ffmpeg-static/读写权限  sudo chmod 777 路径
+  4、在kxzy-webapp\WEB-INF\classes\com\roots\kxzy\config\spring\ 目录中applicationContext-main.xml文件中
+	找 commandsPath 字段，将它的vlaue值改成 系统安装ImageMagick的根路径
+	例如：
+	<bean class="com.roots.framework.media.image.ImageProcessService">
+		<property name="commandsPath" value="H:\Program Files\ImageMagick-6.8.9-Q8/bin"></property>
+	</bean>
+      
+      B:
+	1、search\WEB-INF\classes\config\database.properties:
+	   配置全文检索的数据库配置。包括数据库名称、IP、用户名和密码。
+
+	2、search\WEB-INF\classes\config\server.properties：中server.url 配置搜索地址。
+      
+      C：
+	1、ROOT\WEB-INF\classes\red5.properties:中http.port配置视频服务端口
+	2、ROOT\WEB-INF\red5-web.properties:中storageRoot配置tomcat的全路径。
+	   例如：storageRoot=E\:\\apache-tomcat-7.0.52\\webapps\\kxzy-webapp\\
+	    
+
+
+搜索配置  http://192.168.15.200:9090/search/core/list.rt
+http://192.168.15.200:9090/search/    ---查寻配置的名称-dataimport-entity-execute-refresh status
+新建的配置均需此配置
+
+重新部署search时，删除tomcat下solr-work文件夹

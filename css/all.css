@@ -1,0 +1,44 @@
+@charset "utf-8";
+/* CSS Document */
+
+* {padding:0;margin:0;}
+html {overflow-y:scroll;}
+body {font-size: 100%; background:#FFFFFF; font-family:"宋体";}
+a img, :link img, :visited img {border: 0;}
+table {border-collapse: collapse;border-spacing: 0;}
+fieldset,img { border: 0;}
+address,caption,cite,code,dfn,em,strong,th,var {font-style: normal;}
+ol,ul {list-style: none;}
+caption,th {text-align: left;}
+h1,h2,h3,h4,h5,h6 {font-size: 100%;}
+body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,form,fieldset,input,textarea,p,blockquote,th,td { padding: 0;margin: 0;}
+q:before,q:after{content:'';}
+abbr,acronym { border: 0;}
+/*input{resize:none;outline:none;blr:expression(this.onFocus=this.blur());}*/
+textarea{resize:none}
+a{ color:#; text-decoration: none;outline:none;blr:expression(this.onFocus=this.blur())}
+a:hover { text-decoration: none; }
+.fl{ float:left;}
+.fr{ float:right;}
+.cb{ clear:both; padding:0px; margin:0px; line-height:0px;}
+.both{ clear:both;}
+.pt13{padding-top:13px;}
+.ml25{ margin-left:25px;}
+.ml20{ margin-left:20px;}
+.mr15{ margin-right:15px;}
+.mr40{ margin-right:40px;}
+.mt6{ margin-top:6px;}
+.mt3{ margin-top:3px;}
+.wrapper{ min-width:1024px;_width:expression((document.documentElement.clientWidth||document.body.clientWidth)<1024?"1024px":""); 
+}
+.top{ background:#3a9ace url(../images/top.jpg) no-repeat; height:70px; padding-top:10px;}
+#time{ background:url(../images/pot.jpg) no-repeat 0px 2px; padding-left:20px; color:#FFFFFF; font-size:13px; font-family:Arial; margin-right:40px; float:right;}
+.short a{ background:url(../images/top_but.jpg) no-repeat; width:20px; height:20px; display:block; float:right; margin-right:20px;}
+.short a.set{}
+.short a.mail{ background-position:-20px 0;}
+.short a.home{ background-position:-40px 0;}
+.short a.back{ background-position:-60px 0;}
+.short a.quit{ background-position:-80px 0;}
+.sub2{ background:#379dd5; border:1px solid #eeeeee; border-bottom:1px solid #d3d3d3; color:#FFFFFF; padding:0 10px; *padding:0 5px; height:22px; line-height:22px; font-size:12px; cursor:pointer; *border:0px;}
+.sub3{ background:#379dd5; border:1px solid #eeeeee; border-bottom:1px solid #d3d3d3; color:#FFFFFF; padding:0 10px; *padding:1px 10px; height:22px; line-height:22px; font-size:12px; cursor:pointer; *border:0px; display:table;}
+.but_fanhui{width:60px; height:22px; line-height:22px; text-align:center; background:#379dd5; border:1px solid #eeeeee; border-bottom:1px solid #d3d3d3; color:#FFFFFF; display:block;}

@@ -1,0 +1,27 @@
+@import url(all.css);
+.about_left{ float:left; margin-top:20px; background:url(../images/about_titbg.jpg) no-repeat 0 0; width:192px; min-height:265px;_height:expression(this.scrollHeight < 265 ? "265px" : "auto");}
+.about_left .tit{ padding:5px 0 0 16px ; color:#FFFFFF; font-size:15px; font-weight:bold; height:50px;}
+.about_left .tit span{ font-size:12px; font-weight:500;}
+.about_left .left_nav{ margin-left:30px; font-size:13px;}
+.about_left .left_nav li{ background:url(../images/about_04.jpg) no-repeat 0 0; padding-left:25px; line-height:14px; margin-bottom:15px;}
+.left_nav a{ color:#747474;}
+.left_nav a:hover{ color:#1e5da2;}
+.about_left .left_nav li.hover{ background:url(../images/about_03.jpg) no-repeat 0 0;}
+.about_left .left_nav li.hover a{ color:#1e5da2;}
+.about_right{ float:right; margin-top:20px; width:785px; background:url(../images/about_01.jpg) no-repeat 0 0;}
+.about_right .dizhi{ font-size:12px; color:#666666; line-height:36px; float:left; padding-left:40px;}
+.about_right .en{ font-size:18px; font-weight:bold; color:#1e5da2; line-height:36px; background:url(../images/about_02.jpg) no-repeat 180px 10px; width:170px; text-align:right; padding-right:30px; float:right;}
+.about_right_main{ clear:both; padding:40px 25px; border-top:1px solid #dddddd; color:#383838; font-size:14px;}
+.about_right_main .tit{ text-align:center; font-size:24px; font-weight:bold; padding-bottom:40px; font-family:"微软雅黑"; letter-spacing:1px;}
+.about_right_main p{ line-height:26px; font-family:"宋体";}
+.about_right_main .time{ text-align:right;}
+/*contact*/
+.contact_tit{ color:#1e5da2; font-size:22px; font-weight:bold;}
+.contact_en{ color:#a5a3a3; font-size:12px;}
+.contact_ul{ margin:30px 0 0 20px;}
+.contact_ul li{ background:url(../images/about_05.jpg) no-repeat 0 0; padding-left:25px; margin-bottom:15px; line-height:16px; font-size:14px; color:#818181;}
+/*link*/
+.link_ul{ width:760px;}
+.link_ul li{ width:225px; height:80px; padding:3px; border:1px solid #e0e0e0; margin:0 20px 20px 0; float:left;}
+.link_ul li a{ position:absolute; margin-top:-84px; margin-top:-80px\0; background:#000000; filter:alpha(opacity=70);opacity:0.7; display:block; line-height:26px; width:225px; height:65px; color:#ffffff; text-align:center; font-size:12px; display:none; padding-top:15px;}
+.link_ul li:hover a{ display:block;}

@@ -1,0 +1,48 @@
+<?xml version="1.0"?>
+<project
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd"
+	xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<groupId>com.roots.kxzy</groupId>
+	    <artifactId>roots-kxzy</artifactId>
+		<version>0.0.1</version>
+		<relativePath>../..</relativePath>
+	</parent>
+	<artifactId>kxzy-webapp</artifactId>
+	<packaging>war</packaging>
+	<name>kxzy-webapp Maven Webapp</name>
+	<url>http://maven.apache.org</url>
+	<dependencies>
+		<dependency>
+			<groupId>com.roots.kxzy</groupId>
+			<artifactId>kxzy-system</artifactId>
+			<version>0.0.1</version>
+		</dependency>
+	</dependencies>
+	<build>
+		<finalName>kxzy-webapp</finalName>
+		<outputDirectory>${basedir}/webapp/WEB-INF/classes</outputDirectory>
+		<!--start main source and resource -->
+		<sourceDirectory>src/main/java</sourceDirectory>
+		<resources>
+			<resource>
+				<directory>src/main/resources</directory>
+				<excludes>
+					<exclude>**/*.java</exclude>
+				</excludes>
+			</resource>
+		</resources>
+		<plugins>
+			<plugin>
+				<artifactId>maven-war-plugin</artifactId>
+                <version>2.1.1</version>
+                <configuration>
+                    <webappDirectory>${basedir}/webapp</webappDirectory>
+					<warSourceDirectory>${basedir}/webapp</warSourceDirectory>
+					<!--<outputDirectory>${basedir}/webapp/WEB-INF/classes</outputDirectory>-->
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
+</project>

@@ -1,0 +1,51 @@
+@import url(all.css);
+@import url(nav.css);
+html{overflow-x:hidden;}
+.content2{ _width:944px; _width:expression((document.documentElement.clientWidth||document.body.clientWidth)>1366?"1366px":""); min-width:944px; overflow-x:auto; padding:0 30px; padding-bottom:30px;_padding-bottom:0px;}
+.content{ width:1192px; margin:0 auto; font-size:14px; padding-top:30px;}
+.content .left{ float:left; width:845px; margin-right:35px;/* margin:0 auto;*/}
+.content .right{ float:left; width:311px;}
+/**/
+.content .left .dome .tit{ background:url(../images/dome_1t.jpg) no-repeat; width:450px; height:35px; line-height:34px; color:#000000; font-weight:bold; padding-left:14px;}
+.content .left .dome .nr{ background:url(../images/dome_1m.jpg) repeat-y; width:464px; padding:10px 0px; color:#5b5858; font-size:13px; line-height:24px;}
+.content .left .dome .bo{ background:url(../images/dome_1b.jpg) no-repeat; width:464px; height:4px;}
+.dome .nr .tit2{ font-size:13px; float:left; margin-left:15px; padding-left:8px; line-height:24px; background:url(../images/disc.jpg) no-repeat 0 9px; text-overflow:ellipsis; overflow:hidden; white-space:nowrap; width:310px;}
+.dome .nr .tit2 a{ color:#5b5858;}
+.dome .nr .tit2 a:hover{ color:#878787;}
+.dome .nr .time{ font-family:Arial; font-size:12px; float:right; margin-right:15px;}
+/*首页修改*/
+.content .left .dome table{ margin-left:15px; line-height:24px;}
+.content .left .dome table a{ color:#5B5858;}
+.content .left .dome2 table a{ color:#5B5858;}
+.content .right .dome4 table a{ color:#5B5858;}
+/**/
+.content .left .dome2 .tit{ background:url(../images/dome_2t.jpg) no-repeat; width:334px; height:35px; line-height:34px; color:#000000; font-weight:bold; padding-left:14px;}
+.content .left .dome2 .nr{ background:url(../images/dome_2m.jpg) repeat-y; width:318px; padding:10px 15px; color:#5b5858; font-size:13px; line-height:24px;}
+.content .left .dome2 .bo{ background:url(../images/dome_2b.jpg) no-repeat; width:348px; height:4px;}
+.dome2 .nr .yellow{ color:#a2a327;}
+.dome2 .nr .green{ color:#267503;}
+.dome2 .nr .red{ color:#ae0000;}
+/**/
+.content .left .dome3{ padding-top:38px; *padding-top:28px;}
+.content .left .dome3 .tit{ background:url(../images/dome_3t.jpg) no-repeat; width:831px; height:34px; line-height:34px; color:#000000; font-weight:bold; padding-left:14px;}
+.content .left .dome3 .nr{ background:url(../images/dome_3m.jpg) repeat-y; width:815px; padding:10px 15px;}
+.content .left .dome3 .bo{ background:url(../images/dome_3b.jpg) no-repeat; width:845px; height:4px;}
+.dome3 .nr a{ margin:15px 17px; display:inline-table; float:left; }
+/**/
+.content .right .dome4 .tit{ background:url(../images/dome_4t.jpg) no-repeat; width:297px; height:35px; line-height:34px; color:#000000; font-weight:bold; padding-left:14px;}
+.content .right .dome4 .nr{ background:url(../images/dome_4m.jpg) repeat-y; width:281px; padding:10px 15px; color:#5b5858; font-size:13px; line-height:24px;}
+.content .right .dome4 .bo{ background:url(../images/dome_4b.jpg) no-repeat; width:311px; height:4px;}
+
+
+
+
+
+
+
+
+
+
+
+
+
+

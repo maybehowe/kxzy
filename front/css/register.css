@@ -1,0 +1,25 @@
+@import url(all.css);
+.register_banner{ margin-top:20px;}
+.register_process{ clear:both; margin-bottom:50px; padding-top:30px;}
+#outer{ font-size:14px; color:#333333; margin-bottom:30px; font-family:"微软雅黑";}
+#outer a{ color:#333333;}
+#outer p.tit2{ text-align:right; width:100px; height:50px; padding-right:10px; float:left; line-height:16px; }
+#tab{overflow:hidden;zoom:1;}
+#tab li{ float:left; background:url(../images/register_03.jpg) no-repeat 0 0; padding-left:25px; font-size:14px; color:#333333; cursor:pointer; margin-right:30px; line-height:16px;}
+#tab li.title{ background:url(../images/register_02.jpg) no-repeat 0 0;}
+#content {}
+#content .newslist{display:none; }
+.newslist th{ text-align:right; font-weight:500; height:50px; padding-right:10px;}
+.newslist input.text{ width:300px; height:28px; border:1px solid #cecece; *line-height:28px; line-height:28px\0; color:#333333; font-family:"微软雅黑"; padding:0 10px;}
+.newslist input.file{ width:300px; height:25px; border:1px solid #cecece; padding-top:3px; color:#333333; font-family:"微软雅黑"; }
+.newslist input.text2{ width:100px; height:28px; border:1px solid #cecece; *line-height:28px; line-height:28px\0; color:#333333; font-family:"微软雅黑"; text-align:center; }
+.newslist input.sub{ background:url(../images/register_sub.jpg) no-repeat 0 0; width:158px; height:42px; cursor:pointer; color:#FFFFFF; font-size:16px; font-weight:bold; font-family:"微软雅黑"; border:0px; text-align:center;}
+.newslist select{ color:#333; height:30px; height:24px\0; border: 1px solid #CECECE; margin-right:10px;font-family:"微软雅黑"; float:left;}
+.error_left{ background:url(../images/register_04.jpg) no-repeat 0 0; width:29px; height:31px; display:block; float:left;}
+.error_center{ height:29px; border-top:1px solid #cccccc; border-bottom:1px solid #cccccc; line-height:29px; font-size:13px; padding:0 10px; float:left;}
+.error_right{ background:url(../images/register_05.jpg) no-repeat 0 0; width:5px; height:31px; display:block; float:left;}
+.cxfs{ background:url(../images/register_08.jpg) no-repeat 0 0; width:99px; height:31px; display:block;}
+.register_ok{ text-align:center; padding:60px 0 100px 0;}
+#divSCA  a.team_div_btn{background:url("../images/team_div_btn.png")no-repeat 0 0; margin:8px; width:110px; height:22px; cursor:pointer; color:#FFFFFF; font-size:14px; font-family:"微软雅黑"; border:1px; text-align:center;}
+
+

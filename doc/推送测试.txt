@@ -1,0 +1,1 @@
+ffmpeg.exe -re -i E:\videos\hobbit_vp6.flv -vcodec copy -acodec copy -f flv -y rtmp://localhost/oflaDemo/stream1459081346047
