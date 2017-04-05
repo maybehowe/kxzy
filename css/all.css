@@ -29,7 +29,7 @@ a:hover { text-decoration: none; }
 .mr40{ margin-right:40px;}
 .mt6{ margin-top:6px;}
 .mt3{ margin-top:3px;}
-.wrapper{ min-width:1024px;_width:expression((document.documentElement.clientWidth||document.body.clientWidth)<1024?"1024px":""); 
+.wrapper{ min-width:1024px;_width:expression((document.documentElement.clientWidth||document.body.clientWidth)<1024?"1024px":"");
 }
 .top{ background:#3a9ace url(../images/top.jpg) no-repeat; height:70px; padding-top:10px;}
 #time{ background:url(../images/pot.jpg) no-repeat 0px 2px; padding-left:20px; color:#FFFFFF; font-size:13px; font-family:Arial; margin-right:40px; float:right;}
