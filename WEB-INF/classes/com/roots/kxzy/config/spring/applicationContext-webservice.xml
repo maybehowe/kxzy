@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:jaxws="http://cxf.apache.org/jaxws"
+	xmlns:cxf="http://cxf.apache.org/core"
+	xsi:schemaLocation="http://cxf.apache.org/core http://cxf.apache.org/schemas/core.xsd http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+	http://cxf.apache.org/jaxws http://cxf.apache.org/schemas/jaxws.xsd">
+
+	<description>监控预警启动工作流WebService 接口</description>
+<!-- 	<import resource="classpath:META-INF/cxf/cxf.xml" /> -->
+<!-- 	<import resource="classpath:META-INF/cxf/cxf-servlet.xml" /> -->
+	
+	
+	
+<!-- 	<bean id="smsWebServiceImpl" class="com.roots.smsp.system.webservice.impl.SendSMSImpl" /> -->
+<!-- 	<jaxws:endpoint id="sendSmsService" implementor="#smsWebServiceImpl" -->
+<!-- 		implementorClass="com.roots.smsp.system.webservice.ISendSMS" -->
+<!-- 		address="/sendSmsService"> -->
+<!-- 	</jaxws:endpoint> -->
+	
+	
+</beans>

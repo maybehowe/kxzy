@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:security="http://www.springframework.org/schema/security"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+	http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+	http://www.springframework.org/schema/security
+	http://www.springframework.org/schema/security/spring-security-3.0.3.xsd">
+	<security:http use-expressions="true" 
+		entry-point-ref="authenticationEntryPoint">
+		<!-- <security:intercept-url pattern="/login.rt"
+			filters="none" />
+		<security:intercept-url pattern="/validateCode"
+			access="permitAll" />
+		<security:intercept-url pattern="/resources/**"
+			filters="none" />
+		<security:intercept-url pattern="/**"
+			access="isAuthenticated()" /> -->
+		<!-- <form-login login-page="/login" login-processing-url="/logon" default-target-url="/main" 
+		/> -->
+		<security:custom-filter ref="authenticationFilter" position="FORM_LOGIN_FILTER" />
+		<security:logout logout-url="/logout.rt" logout-success-url="/main.rt" />
+		<security:custom-filter ref="filterSecurityInterceptor" before="FILTER_SECURITY_INTERCEPTOR"/>
+	</security:http>
+	
+	<bean id="authenticationEntryPoint"
+		class="org.springframework.security.web.authentication.LoginUrlAuthenticationEntryPoint">
+		<property name="loginFormUrl" value="/login.rt"></property>
+	</bean>
+	
+	<bean id="authenticationFilter"
+		class="com.roots.framework.security.web.authentication.ValidateCodeUsernamePasswordAuthenticationFilter">
+		<property name="filterProcessesUrl" value="/loginCheck.rt"></property>
+		<property name="authenticationSuccessHandler" ref="authenticationSuccessHandler"></property>
+		<property name="authenticationFailureHandler" ref="authenticationFailureHandler"></property>
+		<property name="authenticationManager" ref="authenticationManager"></property>
+	</bean>
+	<bean id="authenticationSuccessHandler"
+		class="com.roots.framework.security.web.authentication.RequestContextSetAuthenticationSuccessHandler">
+		<property name="defaultTargetUrl" value="/main.rt"></property>
+	</bean>
+	<bean id="authenticationFailureHandler"
+		class="org.springframework.security.web.authentication.SimpleUrlAuthenticationFailureHandler">
+		<property name="defaultFailureUrl" value="/login.rt"></property>
+	</bean>
+	<security:authentication-manager alias="authenticationManager">
+		<security:authentication-provider user-service-ref="userDetailsService">
+			<security:password-encoder hash="sha-256" base64="true">
+			</security:password-encoder>
+		</security:authentication-provider>
+	</security:authentication-manager>
+	
+	<bean name="securityDao" class="com.roots.framework.security.querier.SpringJdbcSecurityDaoImpl">
+		<property name="dataSource" ref="dataSource"></property>
+	</bean>
+	
+	<bean name="userDetailsService" class="com.roots.framework.security.core.userdetails.UserDetailsServiceImpl">
+		<property name="securityDao" ref="securityDao"></property>
+	</bean>
+	
+	<!-- 资源源数据定义，即定义某一资源可以被哪些角色访问 -->
+	<bean id="securityMetadataSource" class="com.roots.framework.security.access.DatabaseSecurityMetadataSourceImpl"
+		scope="singleton">
+		<property name="securityDao" ref="securityDao"/>
+		<property name="anonymousPaths">
+			<set>
+				<value>/statics/**</value>
+				<value>/login.rt</value>
+				<value>/login*.rt</value>
+				<value>/main.rt</value>
+			</set>
+		</property>
+	</bean>
+	
+	<!-- 访问决策器，决定某个用户具有的角色，是否有足够的权限去访问某个资源 -->
+	<bean id="accessDecisionManager" class="org.springframework.security.access.vote.AffirmativeBased">
+		<property name="decisionVoters">
+			<list>
+				<bean class="org.springframework.security.access.vote.RoleVoter"/>
+			</list>
+		</property>
+	</bean>
+	
+	<bean class="org.springframework.security.web.access.intercept.FilterSecurityInterceptor" name="filterSecurityInterceptor">
+		<property name="authenticationManager" ref="authenticationManager"/>
+		<property name="securityMetadataSource" ref="securityMetadataSource"/>
+		<property name="accessDecisionManager" ref="accessDecisionManager"/>
+	</bean>
+	
+</beans>

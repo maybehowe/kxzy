@@ -77,7 +77,7 @@ window.onload = function ()
 	}
 //6
 	var oLi6 = document.getElementById("tab6") && document.getElementById("tab6").getElementsByTagName("li") || [];
-	var oUl6 = document.getElementById("content6") && document.getElementById("content6").getElementsByTagName("div");
+	var oUl6 = document.getElementById("content6") &&document.getElementById("content6").getElementsByTagName("div");
 
 	for(var i = 0; i < oLi6.length; i++)
 	{

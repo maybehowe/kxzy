@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	   xmlns:context="http://www.springframework.org/schema/context"
+	   xmlns:aop="http://www.springframework.org/schema/aop"
+	   xmlns:tx="http://www.springframework.org/schema/tx"
+	   xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+           http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-3.0.xsd
+           http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-3.0.xsd
+           http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.0.xsd"
+	   default-autowire="byName" default-lazy-init="false">
+
+	
+	<description>Spring roots共配置文件</description>
+	<aop:aspectj-autoproxy />
+	<context:component-scan base-package="com.roots.kxzy.*.persistence.model"/>
+	<context:component-scan base-package="com.roots.kxzy.*.persistence.dao"/>
+	<context:component-scan base-package="com.roots.kxzy.*.listener"/>
+	<context:component-scan base-package="com.roots.kxzy.*.initalizer"/>
+	<context:component-scan base-package="com.roots.kxzy.*.service"/>
+	<context:component-scan base-package="com.kxzy.server"/>
+	
+	<bean id="propertyConfigurer" class="com.roots.common.config.OpenPropertyPlaceholderConfigurer">
+         <property name="properties" ref="configurerProperties">
+		</property>
+		<property name="ignoreUnresolvablePlaceholders" value="true"></property>
+		<property name="order" value="1"></property>
+    </bean>
+    
+    <bean name="configurerProperties" class="org.springframework.beans.factory.config.PropertiesFactoryBean">
+    	<property name="properties" >
+    		<bean class="com.roots.common.web.context.WebContextPropertiesFactory"></bean>
+    	</property>
+    	<property name="locations">
+    		<array>
+	  			<value>/conf/*.properties</value>
+       		   	<value>classpath:/com/roots/kxzy/config/*.properties</value>
+			</array>
+    	</property>
+    </bean>
+    
+	<bean class="com.roots.common.context.SpringContextHolder"></bean>
+    
+    <!-- BoneCP configuration -->
+     <bean id="dataSource" class="com.roots.framework.persistence.sql.datasource.BoneCPDataSourceProvider" destroy-method="close">
+         <property name="databaseType" value="${database.type}" />
+         <property name="host" value="${database.host}" />
+         <property name="port" value="${database.port}" />
+         <property name="databaseName" value="${database.name}" />
+         <property name="username" value="${database.username}"/>
+         <property name="password" value="${database.password}"/>
+         <property name="idleConnectionTestPeriod" value="60"/>
+         <property name="idleMaxAge" value="240"/>      
+         <property name="maxConnectionsPerPartition" value="30"/>
+         <property name="minConnectionsPerPartition" value="10"/>
+         <property name="partitionCount" value="3"/>
+         <property name="acquireIncrement" value="5"/>                              
+         <property name="statementsCacheSize" value="100"/>
+         <property name="releaseHelperThreads" value="0"/>
+     </bean>
+	
+	<bean id="sessionFactory"
+		class="org.springframework.orm.hibernate3.annotation.AnnotationSessionFactoryBean">
+		<property name="dataSource" ref="dataSource" />
+		<!-- hibernate的命名规则 -->
+		<property name="namingStrategy">
+			<bean class="org.hibernate.cfg.ImprovedNamingStrategy" />
+		</property>
+		<property name="hibernateProperties">
+			<props>
+				<prop key="hibernate.dialect">${hibernate.dialect}</prop>
+				<prop key="hibernate.hbm2ddl.auto">${hibernate.hbm2ddl.auto}</prop>
+				<prop key="hibernate.show_sql">${hibernate.show_sql}</prop>
+				<prop key="hibernate.jdbc.batch_size">50</prop>
+				<prop key="hibernate.format_sql">${hibernate.format_sql}</prop>
+ 				<prop key="hibernate.autoReconnect">true</prop>
+ 				
+				<prop key="hibernate.cache.provider_class">${hibernate.cache.provider_class}</prop>
+				<prop key="hibernate.cache.use_second_level_cache">true</prop>
+				<prop key="hibernate.cache.use_query_cache">true</prop>
+				<prop key="hibernate.cache.provider_configuration_file_resource_path">classpath:/ehcache.xml</prop>
+			</props>
+		</property>
+		<property name="packagesToScan" value="com.roots.kxzy.*.persistence.model"/><!-- 项目开发时对象映射包：标准命名 -->
+	</bean>
+	
+	<bean id="transactionManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
+		<property name="dataSource" ref="dataSource" />
+	</bean>
+    
+    <tx:advice id="rootsTxAdvice" transaction-manager="transactionManager" >
+		<tx:attributes>
+		  	<tx:method name="get*" read-only="true"/>
+			<tx:method name="is*" read-only="true"/>
+			<tx:method name="find*" read-only="true"/>
+			<tx:method name="*" isolation="DEFAULT"/>
+		</tx:attributes>
+	</tx:advice>
+	<aop:config proxy-target-class="true">
+    	<aop:advisor advice-ref="rootsTxAdvice" pointcut="execution(* com.roots.kxzy.*.service..*.*(..))"  />
+    	<aop:advisor advice-ref="rootsTxAdvice" pointcut="execution(* com.roots.framework.service.impl.BaseServiceImpl.*(..))"  />
+    </aop:config>
+	
+	<bean class="com.roots.framework.persistence.sql.dao.hibernate.PowerHibernateDao" />
+	
+	<!-- transcoder -->
+	<bean name="transcoderRegistry" class="com.roots.framework.media.vedio.transcode.impl.DefaultTranscoderRegistry">
+	 <property name="transcoders">
+	   <list>
+	     <bean class="com.roots.framework.media.vedio.transcode.impl.FfmpegTranscoderProvider">
+	       <property name="winFfmpegExecutable" value="${winffmpeg}"></property>
+	       <property name="liunxFfmpegExecutable" value="${linuxffmpeg}"></property>
+	     </bean>
+	   </list>
+	 </property>
+	</bean>
+	<bean name="transcodeService" class="com.roots.framework.media.vedio.transcode.impl.TranscodeServiceImpl">
+	 <property name="transcoderRegistry" ref="transcoderRegistry"></property>
+	</bean>
+	
+	<bean class="com.roots.framework.media.image.ImageProcessService">
+		<property name="commandsPath" value="/usr/bin"></property>
+	</bean>
+	
+</beans>

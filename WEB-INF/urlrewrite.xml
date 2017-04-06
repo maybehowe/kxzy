@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE urlrewrite
+    PUBLIC "-//tuckey.org//DTD UrlRewrite 4.0//EN"
+    "http://www.tuckey.org/res/dtds/urlrewrite4.0.dtd">
+<urlrewrite>
+	<rule>
+	    <!-- 首页 -->
+		<from>^/$</from>
+		<to>/front/index.rt</to>
+	</rule>
+	<rule>
+	    <!-- 首页 -->
+		<from>^/kxmanage$</from>
+		<to>/manage/login/login.rt</to>
+	</rule>
+	
+	<!-- 逛菜市 beggin -->
+	<rule>
+	    <!-- 逛菜市首页 -->
+		<from>^/market$</from>
+		<to>/market/index.do</to>
+	</rule>
+	<rule>
+	    <!-- 蔬菜首页 -->
+		<from>^/vegetables$</from>
+		<to>/product/list.do?channelId=1&amp;categoryId=79</to>
+	</rule>
+</urlrewrite>
