@@ -166,7 +166,7 @@ function searchSubmit(){
 			<p class="tit">${pic.name } <a id="${pic.id }" name="${pic.id }"> </a></p>
 			<ul id="tab${index.index+1 }" class="tab">
 				<c:forEach items="${pic.cates }" var="cate" varStatus="index1">
-					<li<c:if test="${index1.index==0 }"> class="title"</c:if>>${cate.cateName }</li>
+					<li index="${index1.index}" <c:if test="${index1.index==0 }"> class="title"</c:if>>${cate.cateName }</li>
 				</c:forEach>
 			</ul>
 			<a target="_blank" href="${contextPath }/front/picture/list.rt?categoryId=${pic.id}&columnId=${columnId}" class="more">更多</a>
@@ -244,6 +244,7 @@ function searchSubmit(){
 	</div>
 </div>
 <!--<div class="bottom_png"></div>-->
+<script src="${contextPath }/front/js/tab_ctrl.js" type="text/javascript"></script>
 </body>
 </html>
 

@@ -309,6 +309,9 @@
     float: left;
     margin: 0 0 15px 18px;
 }
+.images_list .images_list_nr .newslist .right li:hover .img{
+  border-color: #3299cc;
+}
 
 .images_list .images_list_nr .newslist .right .img {
     border: 1px solid #dcdcdc;
@@ -316,6 +319,7 @@
     width: 184px;
     height: 138px;
 }
+
 
 .images_list .images_list_nr .newslist .right .img img {
     width: 100%;
@@ -332,6 +336,9 @@
 
 .images_list .images_list_nr .newslist .right .tit2 a {
     color: #6d6d6d;
+}
+.images_list .images_list_nr .newslist .right li:hover .tit2 a{
+  color: #3299cc;
 }
 
 .images_list .images_list_nr .newslist .right2 {
@@ -350,7 +357,12 @@
     width: 184px;
     height: 138px;
 }
-
+.images_list .images_list_nr .newslist .right2 li:hover .img{
+  border-color: #3299cc;
+}
+.images_list .images_list_nr .newslist .right2 li:hover .tit2 a{
+  color: #3299cc;
+}
 .images_list .images_list_nr .newslist .right2 .img img {
     width: 100%;
 }
@@ -461,6 +473,13 @@
     padding: 1px;
     width: 176px;
     height: 132px;
+}
+
+.images_list2 .images_list_nr .newslist .main li:hover .img{
+  border-color: #3299cc;
+}
+.images_list2 .images_list_nr .newslist .main li:hover .tit2 a{
+  color: #3299cc;
 }
 
 .images_list2 .images_list_nr .newslist .main .tit2 {
