@@ -4,19 +4,6 @@ var tabCtrl = {
     self.triggerClick();
   },
   triggerClick: function () {
-    // var tabs = ['#tab1','#tab2', '#tab3', '#tab4'];
-    // for(var i = 0; i < tabs.length; i++){
-    //   var li_arr = $(tabs[i]).find('li');
-    //   var j = 0;
-    //   setInterval(function () {
-    //     if(j + 1 == li_arr.length){
-    //       j = 0
-    //     }else{
-    //       j++
-    //     }
-    //     $(tabs[i]).find('li').eq(j).trigger('click');
-    //   }, 5000)
-    // }
     var i = 0, j = 0, m = 0, n = 0;
     var li_arr_1 = $('#tab1').find('li'),
         li_arr_2 = $('#tab2').find('li'),
